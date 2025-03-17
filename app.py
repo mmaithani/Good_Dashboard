@@ -112,10 +112,7 @@ st.markdown(
 # ----- LOAD DATA WITH CACHING -----
 @st.cache_data
 def load_data():
-    df = pd.read_excel(
-        "Sample - Superstore-1.xlsx",
-        engine="openpyxl"
-    )
+    df = pd.read_excel("Sample - Superstore-1.xlsx",engine="openpyxl")
     # Convert "Order Date" to datetime if needed
     if not pd.api.types.is_datetime64_any_dtype(df["Order Date"]):
         df["Order Date"] = pd.to_datetime(df["Order Date"])
